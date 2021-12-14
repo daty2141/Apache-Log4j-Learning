@@ -48,5 +48,12 @@ httpserver上未看到请求记录。
 
 ![](img/3.png)
 
+## 3.修复方案
+1）将Log4j框架升级到最新版本
 
+2）添加jvm启动参数-Dlog4j2.formatMsgNoLookups=true；
+
+3）在应用classpath下添加log4j2.component.properties配置文件，文件内容为log4j2.formatMsgNoLookups=true；
+
+4）JDK使用11.0.1、8u191、7u201、6u211及以上的高版本；
 # 以上都是内网学习打的，仅供学习
